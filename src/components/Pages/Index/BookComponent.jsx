@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { redirect, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 function BookComponent({ styles, data, clickable, tapa }) {
@@ -9,7 +9,7 @@ function BookComponent({ styles, data, clickable, tapa }) {
   useEffect(() => {
     if (!clickable) {
       setcurrentPage(1);
-      [...BookDivRef.current.children].map((child, key) => {
+      [...BookDivRef.current.children].forEach((child, key) => {
         child.classList.remove("passed");
         child.style.zIndex = key;
       });
@@ -56,9 +56,6 @@ function BookComponent({ styles, data, clickable, tapa }) {
                       )
                     )
                       return;
-                    console.log(key);
-                    console.log("link");
-                    console.log("current page: ");
                     /* window.location.href = `exercises/${
                       i + 1 + (key - 1) * -5
                     }/${BookDivRef.current.parentElement.id}`;
@@ -104,12 +101,10 @@ function BookComponent({ styles, data, clickable, tapa }) {
           }
           if (e.target.classList.contains("passed")) {
             setcurrentPage(1);
-            console.log(currentPage);
             e.target.style.zIndex = "10";
           } else {
             delay(2000).then(() => (e.target.style.zIndex = "0"));
             setcurrentPage(2);
-            console.log(currentPage);
           }
 
           e.target.classList.toggle("passed");

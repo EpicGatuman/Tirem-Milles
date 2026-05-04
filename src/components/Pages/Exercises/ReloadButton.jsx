@@ -9,7 +9,7 @@ const navigate = useNavigate()
     };
 
     return <Component>
-        <img className="reloadButton" src="https://bassets.github.io/reload.svg" onClick={()=>{navigate(0)}} />
+        <img alt="Reload page" className="reloadButton" src="https://bassets.github.io/reload.svg" onClick={()=>{navigate(0)}} />
     </Component>
 }
 

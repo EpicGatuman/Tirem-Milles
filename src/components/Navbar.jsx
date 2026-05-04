@@ -7,13 +7,18 @@ function Navbar({ actualPage }) {
     <Container>
       <Nav>
         <div>
-          <a onClick={function(){
-            window.location.href='#';
-          }} style={{fontSize: "30px", userSelect:"none"}}>Tirem Milles</a>
+          <button
+            onClick={function () {
+              window.location.href = "#";
+            }}
+            style={{ fontSize: "30px", userSelect: "none", background: "transparent", border: "none", color: "white" }}
+          >
+            Tirem Milles
+          </button>
         </div>
         <Pages>
-          <Link to="/" style={{ opacity: actualPage == "Inici" ? 1 : 0.5, userSelect:"none" }}>Inici</Link>
-          <Link to="/exercises" style={{ opacity: actualPage == "Exercises" ? 1 : 0.5,userSelect:"none" }}>Exercicis</Link>
+          <Link to="/" style={{ opacity: actualPage === "Inici" ? 1 : 0.5, userSelect:"none" }}>Inici</Link>
+          <Link to="/exercises" style={{ opacity: actualPage === "Exercises" ? 1 : 0.5,userSelect:"none" }}>Exercicis</Link>
         </Pages>
       </Nav>
     </Container>
@@ -57,5 +62,4 @@ const Pages = styled.div`
 `;
 
 export default Navbar;
-
 
