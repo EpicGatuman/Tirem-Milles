@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter, Routes, Route, HashRouter, Switch } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import MainPage from "./components/Pages/MainPage/MainPage";
 import ExercisesPage from "./components/Pages/Index/ExercisesPage";
 import Page from "./components/Pages/Exercises/Page";
@@ -12,7 +12,6 @@ import Act6Cast from "./components/Pages/Exercises/Activities/Act6-cast/Act6-cas
 import Act6Cat from "./components/Pages/Exercises/Activities/Act6-cat/Act6-cat";
 
 function App() {
-  console.log(process.env.PUBLIC_URL);
   return (
     <BrowserRouter basename={`/${process.env.PUBLIC_URL}`}>
         <Routes>
@@ -44,8 +43,8 @@ function App() {
                   <Act2 key={1} />,
                   <Act2 key={2} />,
                   <Act2 key={3} />,
-                  <Act2 key={3} />,
                   <Act2 key={4} />,
+                  <Act2 key={5} />,
                   <Act2 key={6} />,
                   <Act2 key={7} />,
                 ]}
